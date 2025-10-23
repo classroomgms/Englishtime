@@ -10,6 +10,18 @@
   gtag('js', new Date());
 
   gtag('config', 'G-R1ZCLH6XCR');
+	(function() {
+    let lastTime = Date.now();
+    const threshold = 60000; // 1 minute threshold for sleep detection
+
+    setInterval(() => {
+      const currentTime = Date.now();
+      if (currentTime - lastTime > threshold) {
+        location.reload(); // Refresh the page
+      }
+      lastTime = currentTime;
+    }, 10000); // Check every 10 seconds
+  })();
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2694073837597977"
      crossorigin="anonymous"></script>
