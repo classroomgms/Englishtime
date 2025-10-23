@@ -765,6 +765,20 @@
     <div class="links-container"></div>
   </div>
 </nav>
-		
+		<script>
+  (function() {
+    let lastTime = Date.now();
+    const threshold = 60000; // 1 minute threshold for sleep detection
+
+    setInterval(() => {
+      const currentTime = Date.now();
+      if (currentTime - lastTime > threshold) {
+        location.reload(); // Refresh the page
+      }
+      lastTime = currentTime;
+    }, 10000); // Check every 10 seconds
+  })();
+</script>
+
   </body>
 </html>
